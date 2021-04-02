@@ -1,6 +1,6 @@
 {
     "name": "array-querier",
-    "version": "1.0.0",
+    "version": "1.0.9",
     "description": "A TS/JS NPM Package to Filter an array of objects with multiple match-criteria.",
     "main": "index.js",
     "scripts": {
@@ -8,12 +8,12 @@
         "build": "tsc",
         "format": "prettier --write \"core/**/*.ts\"",
         "lint": "tslint -p tsconfig.json",
-        "prepublishOnly": "npm test && npm run lint",
+        "prepublishOnly": "npm test",
         "prepare": "npm run build",
         "preversion": "npm run lint",
-        "version": "npm run format && npm version patch",
-        "postversion": "git add . && git commit -m \"🟢 RELEASING V %npm_package_version% ✨\" && git push --tags ",
-        "release": "npm run version && npm publish"
+        "xversion": "npm run format && npm --no-git-tag-version version patch",
+        "gitupdate": "git add . && git commit -m \"🟢 RELEASING V %npm_package_version% ✨\" && git push --tags ",
+        "release": "npm run xversion && npm run gitupdate && npm publish"
     },
     "repository": {
         "type": "git",
