@@ -5,24 +5,25 @@
     "main": "index.js",
     "scripts": {
         "test": "jest --config jestconfig.json",
+        "build": "tsc",
         "format": "prettier --write \"core/**/*.ts\" \"core/**/*.js\"",
         "lint": "tslint -p tsconfig.json",
-        "build": "tsc",
+        "prepublishOnly": "npm test && npm run lint",
         "prepare": "npm run build",
         "preversion": "npm run lint",
         "version": "npm run format && git add -A core && npm version patch.",
         "postversion": "git push && git push --tags",
-        "release": "npm publish "
+        "release": "npm publish"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/orbitturner/array-querier.git"
     },
     "keywords": [
-        "jwt",
-        "angular",
-        "orbit",
-        "authentication",
+        "Array Filter",
+        "Array Query",
+        "Query",
+        "Filter",
         "orbitturner"
     ],
     "author": "Orbit Turner",
