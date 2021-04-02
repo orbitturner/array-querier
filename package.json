@@ -6,14 +6,14 @@
     "scripts": {
         "test": "jest --config jestconfig.json",
         "build": "tsc",
-        "format": "prettier --write \"core/**/*.ts\" \"core/**/*.js\"",
+        "format": "prettier --write \"core/**/*.ts\"",
         "lint": "tslint -p tsconfig.json",
         "prepublishOnly": "npm test && npm run lint",
         "prepare": "npm run build",
         "preversion": "npm run lint",
-        "version": "npm run format && git add -A core && npm version patch.",
-        "postversion": "git push && git push --tags",
-        "release": "npm publish"
+        "version": "npm run format && npm version patch",
+        "postversion": "git add . && git commit -m \"🟢 RELEASING V %npm_package_version% ✨\" && git push --tags ",
+        "release": "npm run version && npm publish"
     },
     "repository": {
         "type": "git",

@@ -1,5 +1,5 @@
-import { ComplexFilter } from "./workers/multiLevelDepthFilter";
-import { SimpleFilter } from "./workers/oneLevelDepthFilter";
+import { ComplexFilter } from './workers/multiLevelDepthFilter';
+import { SimpleFilter } from './workers/oneLevelDepthFilter';
 
 // 🟢💻 WELCOME TO THE SPACESHIP - DEVELOPED BY 💻🟢
 //  ██████╗ ██████╗ ██████╗ ██╗████████╗    ████████╗██╗   ██╗██████╗ ███╗   ██╗███████╗██████╗
@@ -20,32 +20,33 @@ import { SimpleFilter } from "./workers/oneLevelDepthFilter";
 /**
  * Filters an array of objects with multiple match-criteria.
  * Choose One of the available function depending on your array composition.
- * 
+ *
  * @see -> https://github.com/orbitturner/array-querier
  * @exports {filterSimpleArray, filterComplexArray}
  */
-export module Querier {
+export class Querier {
+  /**
+   * Filters an array of objects (one level-depth) with multiple criteria.
+   * The function returns an array of the same type as the input array.
+   *
+   * @param array -> The Array of JSON Object to filter.
+   * @param filters -> An object with all the filter criteria you want.
+   * @returns {Array} -> Filtered Data Array.
+   */
+  public static filterSimpleArray(array: any[], filters: { [x: string]: any[] }): any[] {
+    return SimpleFilter.oneLevelDepthFilter(array, filters);
+  }
 
-    /**
-     * Filters an array of objects (one level-depth) with multiple criteria.
-     * The function returns an array of the same type as the input array.
-     * 
-     * @param array -> The Array of JSON Object to filter.
-     * @param filters -> An object with all the filter criteria you want.
-     * @returns {Array} -> Filtered Data Array.
-     */
-    export function filterSimpleArray(array: any[], filters: { [x: string]: any[]; }): any[] {
-        return SimpleFilter.oneLevelDepthFilter(array, filters);
-    }
-
-    /**
-     * Filters a multi Level Depth array of objects using custom predicates.
-     *
-     * @param  {Array} -> The Array of JSON Object to filter.
-     * @param  {Object} -> An object with all the filter criteria you want.
-     * @return {Array} -> Filtered Data Array.
-     */
-    export function filterComplexArray(array: any[], filters: { [x: string]: (arg0: any) => any; }): any[] {
-        return ComplexFilter.multiLevelDepthFilter(array, filters);
-    }
+  /**
+   * Filters a multi Level Depth array of objects using custom predicates.
+   *
+   * @param  {Array} -> The Array of JSON Object to filter.
+   * @param  {Object} -> An object with all the filter criteria you want.
+   * @return {Array} -> Filtered Data Array.
+   */
+  public static filterComplexArray(array: any[], filters: { [x: string]: (arg0: any) => any }): any[] {
+    return ComplexFilter.multiLevelDepthFilter(array, filters);
+  }
 }
+
+// export } as Querier;
