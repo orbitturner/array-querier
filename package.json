@@ -1,6 +1,6 @@
 {
     "name": "array-querier",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "A TS/JS NPM Package to Filter an array of objects with multiple match-criteria.",
     "main": "index.js",
     "scripts": {
