@@ -1,6 +1,7 @@
 ﻿# 🟢 Array Querier 🔎
-[![Compatible Status](https://img.shields.io/badge/works%20with-typescript-blue)](https://www.npmjs.com/package/array-querier)
-[![Compatible Status](https://img.shields.io/badge/works%20with-javascript-blue)](https://www.npmjs.com/package/array-querier)
+[![Compatible Status](https://img.shields.io/badge/works%20with-ts/js-blue)](https://www.npmjs.com/package/array-querier)
+[![Code Size Status](https://img.shields.io/github/languages/code-size/orbitturner/array-querier)](https://www.npmjs.com/package/array-querier)
+[![Commit Status](https://img.shields.io/github/commit-activity/m/orbitturner/array-querier?color=red)](https://www.npmjs.com/package/array-querier)
 [![Issues Status](https://img.shields.io/github/issues/orbitturner/array-querier)](https://www.npmjs.com/package/array-querier)
 [![npm version](https://img.shields.io/npm/v/array-querier.svg)](https://www.npmjs.com/package/array-querier) [![license](https://img.shields.io/npm/l/array-querier.svg)](https://www.npmjs.com/package/array-querier)
 
@@ -19,29 +20,19 @@
 <br/>
 
 ___
-## Contents
-- [array-querier](#array-querier)
-  * [What is this Library for?](#what-is-this-library-for-)
-  * [Key Features](#key-features)
-  * [Installation](#installation)
-  * [Usage: Standalone](#usage--standalone)
-  * [Usage: Injection](#usage--injection)
+## 📚 Table Of Contents 📑
+- [🟢 Array Querier 🔎](#---array-querier---)
+  * [📚 Table Of Contents 📑](#---table-of-contents---)
+  * [💨 What is this Library for? 🤔](#---what-is-this-library-for----)
+  * [✨ Key Features 🎯](#--key-features---)
+  * [📥 Installation 🔰](#---installation---)
+  * [🤔 One-Level vs Multi-Level Depth JSON ? 🤔](#---one-level-vs-multi-level-depth-json-----)
+  * [⚙ Usage: One-Level Depth Arrays (Simple Arrays) 🎚](#--usage--one-level-depth-arrays--simple-arrays----)
+    + [➤ Querier.filterSimpleArray(yourData, filterObject); 🟢](#--querierfiltersimplearray-yourdata--filterobject-----)
+  * [⚙ Usage: Multi-Level Depth Arrays (Complex Arrays) 🎛](#--usage--multi-level-depth-arrays--complex-arrays----)
+    + [➤ Querier.filterComplexArray(yourData, filterObject); 🟢](#--querierfiltercomplexarray-yourdata--filterobject-----)
   * [Configuration Options](#configuration-options)
-    + [`tokenGetter: function(HttpRequest): string`](#-tokengetter--function-httprequest---string-)
-    + [`allowedDomains: array`](#-alloweddomains--array-)
-    + [`disallowedRoutes: array`](#-disallowedroutes--array-)
-    + [`headerName: string`](#-headername--string-)
-    + [`authScheme: string | function(HttpRequest): string`](#-authscheme--string---function-httprequest---string-)
-    + [`throwNoTokenError: boolean`](#-thrownotokenerror--boolean-)
-    + [`skipWhenExpired: boolean`](#-skipwhenexpired--boolean-)
-  * [Using a Custom Options Factory Function](#using-a-custom-options-factory-function)
-  * [Configuration for Ionic 2+](#configuration-for-ionic-2-)
-  * [Configuration Options](#configuration-options-1)
-    + [`JwtHelperService: service`](#-jwthelperservice--service-)
-  * [isTokenExpired (old tokenNotExpired function)](#istokenexpired--old-tokennotexpired-function-)
-  * [getTokenExpirationDate](#gettokenexpirationdate)
-  * [decodeToken](#decodetoken)
-  * [Contributing](#contributing)
+  * [Contributing ❤](#contributing--)
   * [Issue Reporting](#issue-reporting)
   * [GREETINGS](#greetings)
   * [Author](#author)
@@ -58,7 +49,7 @@ ___
 
 
 
-## Key Features
+## ✨ Key Features 🎯
 
 * Use it **without `Instanciation`**  because all the methods are `Static`.
 * **Multi Level Depth Filtering** with complex filtering condition.
@@ -67,7 +58,7 @@ ___
 
 ___
 
-## Installation
+## 📥 Installation 🔰
 
 ```bash
 # installation with npm
@@ -83,7 +74,7 @@ yarn add array-querier
 **This HELPER relies on NOTHING SO YOU DON'T NEED ADDITIONNAL PACKAGES.**
 
 ___
-### One-Level vs Multi-Level Depth JSON ?
+## 🤔 One-Level vs Multi-Level Depth JSON ? 🤔
 
 A JSON depth level is just an nesting of another object within a current JSON object.
 For example :
